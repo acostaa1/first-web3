@@ -1,0 +1,12 @@
+/* Styles go here */
+.container-fluid { 
+  border: solid black;
+}
+
+.row {
+  border: solid red;
+}
+
+.col {
+  border: solid blue;
+}
