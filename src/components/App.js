@@ -28,6 +28,7 @@ class App extends Component {
     console.log(latestBlock);
   }
   render() {
+    const {blockNumber, difficulty, gasPrice} = this.state;
     return (
       <div>
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -39,10 +40,27 @@ class App extends Component {
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
-                <h5>Etherium Blockchain Explorer</h5>
+                <h5>Etherium Blockchain Explorr</h5>
                 <div className="row">
-                  <div className = "col-4 ">
-                    <div className= "bg-light"></div>
+                  <div className="col-4 ">
+                    <div className="bg-light pt-4 pb-3 m-1">
+                      <h5>Latest Block</h5>
+                      <p>{blockNumber}</p>
+                    </div>
+                  </div>
+
+                  <div className="col-4 ">
+                    <div className="bg-light pt-4 pb-3 m-1">
+                      <h5>Difficulty</h5>
+                      <p>{difficulty}</p>
+                    </div>
+                  </div>
+
+                  <div className="col-4 ">
+                    <div className="bg-light pt-4 pb-3 m-1">
+                      <h5>Gas Price</h5>
+                      <p>{gasPrice} </p>
+                    </div>
                   </div>
                 </div>
               </div>
