@@ -38,6 +38,7 @@ class App extends Component {
     console.log(latestBlock);
     console.log(latestBlocks);
   }
+
   render() {
     const { blockNumber, difficulty, gasPrice, latestBlocks } = this.state;
     return (
@@ -54,7 +55,7 @@ class App extends Component {
                 className="content mr-auto ml-auto"
                 style={{ width: "700px" }}
               >
-                <h5>Etherium Blockchain Explorr</h5>
+                <h5>Etherium Blockchain Explorer</h5>
                 <div className="row">
                   <div className="col-4 ">
                     <div className="bg-light pt-4 pb-3 m-1">
@@ -65,7 +66,7 @@ class App extends Component {
 
                   <div className="col-4 auto ">
                     <div className="bg-light pt-4 pb-3 m-1">
-                      <h5>Difficulty</h5>
+                      <h5>Current Difficulty</h5>
                       <p>{difficulty}</p>
                     </div>
                   </div>
@@ -98,9 +99,13 @@ class App extends Component {
                               return (
                                 <tr key={idx}>
                                   <td>{block.number}</td>
-                                  <td>{block.hash.substring(0,10)}...</td>
-                                  <td>{block.miner.substring(0,10)}...</td>
-                                  <td>{block.timestamp}</td>
+                                  <td>{block.hash.substring(0, 10)}...</td>
+                                  <td>{block.miner.substring(0, 10)}...</td>
+                                  <td>
+                                    {new Date(
+                                      block.timestamp * 1000
+                                    ).toString()}
+                                  </td>
                                 </tr>
                               );
                             })}
