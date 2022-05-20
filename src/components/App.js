@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Web3 from "web3";
 import axios from "axios";
+import moment from 'moment'
 
 class App extends Component {
   constructor() {
@@ -42,10 +43,11 @@ class App extends Component {
 
     //latest 10 blocks
     const latestBlocks = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
       let block = await web3.eth.getBlock(latestBlock.number - i);
       latestBlocks.push(block);
     }
+
     this.setState({
       blockNumber: latestBlock.number,
       difficulty: latestBlock.difficulty,
@@ -132,7 +134,9 @@ class App extends Component {
                                   <td>
                                     {new Date(
                                       block.timestamp * 1000
-                                    ).toString()}
+                                    ).toLocaleString('en-US')}
+                                    <div>{moment(block.timestamp * 1000).fromNow()}</div>
+                                    
                                   </td>
                                 </tr>
                               );
