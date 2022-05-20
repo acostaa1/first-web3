@@ -1,12 +1,13 @@
 {
-  "name": "stackathon-1-etherium-tracker",
+  "name": "stackathon-1-ether-tracker",
   "version": "1.0.0",
-  "description": "See details from the etherium blockchain",
+  "description": "See details from the ethereum blockchain",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.27.2",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-es2015": "6.24.1",
